@@ -1,0 +1,63 @@
+
+
+body {
+    font-family: 'Kufam', cursive;
+    background: linear-gradient(#fb8500, #ffb703);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    color: #023047;
+}
+
+/*
+    SIDE MARGIN ======================================= SIDE MARGIN
+*/
+
+header {
+    background: linear-gradient(#219ebc, #8ecae6);
+    border-right: 1px solid #023047;
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header h1 {
+    margin: 1vmin;
+    align-self: center;
+}
+
+header h2 {
+    align-self: center;
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+
+#bottom-half {
+    height: 50vh;
+}
+
+/*
+    BODY OBJECTS ======================================= BODY OBJECTS
+*/
+
+#body-container {
+    height: 100vh;
+    width: 50vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 20% 60% 20%;
+}
+
+#game-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-rows: 33% 34% 33%;
+    grid-template-columns: 33% 34% 33%;
+}
