@@ -37,6 +37,20 @@ header h2 {
 
 #bottom-half {
     height: 50vh;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+button {
+    align-self: center;
+    background-color: #023047;
+    color: #8ecae6;
+    width: 70%;
+    height: 4vh;
+    margin-top: 2vh;
 }
 
 /*
@@ -60,4 +74,42 @@ header h2 {
     display: grid;
     grid-template-rows: 33% 34% 33%;
     grid-template-columns: 33% 34% 33%;
+}
+
+#name-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#name-container label {
+    margin-bottom: 2vh;
+}
+
+#player-one-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#player-two-container {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }

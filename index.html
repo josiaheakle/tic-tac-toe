@@ -11,11 +11,19 @@
     <header>
         <h1>TIC<br>TAC<br>TOE</h1>
         <h2>Josiah Eakle</h2>
-        <div id='bottom-half'></div>
+        <div id='bottom-half'>
+            <button id='one-player-button'>One Player</button>
+            <button id='two-player-button'>Two Players</button>
+        </div>
     </header>
     <div id='body-container'>
+        <form id='name-container' onsubmit="return false">
+
+        </form>
+        <div class='score-container' id='player-one-container'></div>
         <div id='game-container'>
         </div>
+        <div class='score-container' id='player-two-container'></div>
     </div>
 </body>
 <script src="script.js"></script>
