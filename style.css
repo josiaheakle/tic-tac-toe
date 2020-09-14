@@ -27,7 +27,7 @@ button {
     color: #8ecae6;
     width: 70%;
     height: 4vh;
-    margin-top: 2vh;
+    margin: 1vh;
 }
 
 /*
@@ -37,18 +37,13 @@ button {
 
 
 #game-container {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+
     display: grid;
     grid-template-rows: 33% 34% 33%;
     grid-template-columns: 33% 34% 33%;
 }
 
 #name-container {
-    grid-column-start: 2;
-    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     height: 100%;
@@ -63,19 +58,7 @@ button {
     margin-bottom: 2vh;
 }
 
-#player-one-container {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
 
-#player-two-container {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
 
 .score-container {
     display: flex;
@@ -113,6 +96,11 @@ button {
         justify-content: center;
     }
 
+    #name-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
     #body-container {
         height: 100vh;
         width: 50vw;
@@ -123,6 +111,10 @@ button {
     }
 
     #game-container {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
         font-size: 5em;
     }
 
@@ -133,6 +125,20 @@ button {
         flex-direction: column;
         justify-content: center;
         align-content: center;
+    }
+
+    #player-one-container {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    #player-two-container {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
 
 }
@@ -156,6 +162,11 @@ button {
         margin-left: 2vw;
     }
 
+    #name-container {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
     header {
         background: linear-gradient(#219ebc, #8ecae6);
         border-bottom: 1px solid #023047;
@@ -167,6 +178,12 @@ button {
     }
 
     #game-container {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-left: 5vw;
+        margin-right: 5vw;
         font-size: 3em;
     }
 
@@ -185,6 +202,20 @@ button {
         flex-direction: column;
         justify-content: center;
         align-content: center;
+    }
+
+    #player-one-container {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    
+    #player-two-container {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
     }
 
 }
