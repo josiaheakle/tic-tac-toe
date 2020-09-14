@@ -4,7 +4,7 @@
 
 const GameTile = (idIn) => {
 
-    console.log(`GAMETILE MAKE`)
+    // console.log(`GAMETILE MAKE`)
 
     const id = idIn;
     let marked = false;
@@ -65,7 +65,7 @@ const PlayGame = (function() {
     // If so run the proper game function
     function gameReady() {
 
-        console.log(`Players amt ${_players.length}\n_playerAmt: ${_playerAmt}`)
+        // console.log(`Players amt ${_players.length}\n_playerAmt: ${_playerAmt}`)
         _turnNum = 0;
         _winNum = 0;
 
@@ -79,7 +79,7 @@ const PlayGame = (function() {
                 _twoPlayerGame();
             }
         } else {
-            console.log('not ready')
+            // console.log('not ready')
         }
     }
 
@@ -164,10 +164,10 @@ const PlayGame = (function() {
         let chosenTile = Math.floor(Math.random() * availableTileAmt)
 
         if(GameBoard.markTile(_possibleTiles[chosenTile], 2)) {
-            console.log(`CPU CHOSEN tile ${_possibleTiles[chosenTile]}`)
+            // console.log(`CPU CHOSEN tile ${_possibleTiles[chosenTile]}`)
             PlayGame.nextTurn();
         } else {
-            console.log(`${_possibleTiles[chosenTile]} NOT AVAILABLE`)
+            // console.log(`${_possibleTiles[chosenTile]} NOT AVAILABLE`)
         }
 
 
@@ -187,7 +187,7 @@ const PlayGame = (function() {
             let mark2 = GameBoard.getMarkByIndex(i+1);
             let mark3 = GameBoard.getMarkByIndex(i+2);
             if(mark1 == mark2 && mark2 == mark3 && mark1 !== '0') {
-                console.log(`HORIZONTAL WIN STARTING WITH ${GameBoard.gameboard[i].getId()}`)
+                // console.log(`HORIZONTAL WIN STARTING WITH ${GameBoard.gameboard[i].getId()}`)
 
                 if(mark1 == 'X') return 1
                 else if(mark1 == 'O') return 2
@@ -200,7 +200,7 @@ const PlayGame = (function() {
             let mark2 = GameBoard.getMarkByIndex(i+3);
             let mark3 = GameBoard.getMarkByIndex(i+6);
             if(mark1 == mark2 && mark2 == mark3 && mark1 !== '0') {
-                console.log(`vertical WIN STARTING WITH ${GameBoard.gameboard[i].getId()}`)
+                // console.log(`vertical WIN STARTING WITH ${GameBoard.gameboard[i].getId()}`)
 
                 if(mark1 == 'X') return 1
                 else if(mark1 == 'O') return 2
@@ -212,7 +212,7 @@ const PlayGame = (function() {
         if(GameBoard.getMarkByIndex(0) == GameBoard.getMarkByIndex(4)
             && GameBoard.getMarkByIndex(4) == GameBoard.getMarkByIndex(8)
             && GameBoard.getMarkByIndex(0) !== '0') {
-                console.log(`DIAGONAL WIN STARING WITH ${GameBoard.gameboard[0].getId()}`)
+                // console.log(`DIAGONAL WIN STARING WITH ${GameBoard.gameboard[0].getId()}`)
 
                 if(GameBoard.getMarkByIndex(0) == 'X') return 1
                 else if(GameBoard.getMarkByIndex(0) == 'O') return 2
@@ -221,7 +221,7 @@ const PlayGame = (function() {
         else if(GameBoard.getMarkByIndex(2) == GameBoard.getMarkByIndex(4)
         && GameBoard.getMarkByIndex(4) == GameBoard.getMarkByIndex(6)
         && GameBoard.getMarkByIndex(2) !== '0') {
-            console.log(`DIAGONAL WIN STARING WITH ${GameBoard.gameboard[2].getId()}`)
+            // console.log(`DIAGONAL WIN STARING WITH ${GameBoard.gameboard[2].getId()}`)
 
             if(GameBoard.getMarkByIndex(2) == 'X') return 1
             else if(GameBoard.getMarkByIndex(2) == 'O') return 2
@@ -315,7 +315,7 @@ const InputController = (function() {
                 if(!clicked) {
                     if(GameBoard.markTile(tile.id, playerNum)) {
                         clicked = true;
-                        console.log(`CLICK`)
+                        // console.log(`CLICK`)
                         PlayGame.nextTurn();
                     }
                 }
@@ -359,7 +359,7 @@ const GameBoard = (function() {
     }
 
     function _makeBoardArray() {
-        console.log(`CREATING GAME BOARD ARRAY`)
+        // console.log(`CREATING GAME BOARD ARRAY`)
         const gb = [];
         let columnCounter = -1;
         let rowCounter = 0;
@@ -398,7 +398,7 @@ const GameBoard = (function() {
         let markWork = false;
         if      (player == 1) mark = 'X'
         else if (player == 2) mark = 'O'
-        else                  console.log(`ERROR: PLAYER NOT PROPERLY DECLARED`)
+        // else                  console.log(`ERROR: PLAYER NOT PROPERLY DECLARED`)
         const index = _getTileIndexById(tileId);
         gameTiles.forEach(tile => {
             if(tile.id == tileId && !gameboard[index].isMarked()) {
@@ -406,7 +406,7 @@ const GameBoard = (function() {
                 GraphicController.markTile(tileId, mark)
                 markWork = true;
             } else if (tile.id == tileId && gameboard[index].isMarked()) {
-                console.log(`TILE (${tileId}) already marked!`)
+                // console.log(`TILE (${tileId}) already marked!`)
             }
         });
         return markWork;
@@ -418,7 +418,7 @@ const GameBoard = (function() {
 
     function printGameBoardTiles() {
         gameboard.forEach(tile=> {
-            console.log(`${tile.getId()} has mark ${tile.getMarkStr()} and bool is ${tile.isMarked()} `)
+            // console.log(`${tile.getId()} has mark ${tile.getMarkStr()} and bool is ${tile.isMarked()} `)
         });
     }
 
@@ -450,7 +450,7 @@ const GraphicController = (function() {
     // Draws gameboard onto DOM
     function drawBoard(gameboard) {
         // Draws tic tac toe lines
-        console.log(`Drawing Board`)
+        // console.log(`Drawing Board`)
         gameboard.forEach(gametile => {
             const tile = document.createElement('div')
             tile.id = gametile.getId();
@@ -474,7 +474,7 @@ const GraphicController = (function() {
         gameTiles.forEach(tile => {
             if(tile.id == tileId) {
                 markPara = document.createElement('p');
-                markPara.style.fontSize = '5em';
+                // markPara.style.fontSize = '5em';
                 markPara.style.margin = '0'
                 markPara.style.alignSelf = 'center'
                 markPara.style.justifySelf = 'center'
@@ -541,7 +541,7 @@ const GraphicController = (function() {
         p1Name.textContent = _players[0].getName();
         let p1Score = document.createElement('h2')
         p1Score.textContent = _players[0].getScore(); 
-        console.log(`PLAYER ONE : ${_players[0].getScore()}`)
+        // console.log(`PLAYER ONE : ${_players[0].getScore()}`)
         p1Name.style.alignSelf = 'center'
         p1Score.style.alignSelf = 'center'
 
@@ -552,7 +552,7 @@ const GraphicController = (function() {
         p2Name.textContent = _players[1].getName();
         let p2Score = document.createElement('h2')
         p2Score.textContent = _players[1].getScore(); 
-        console.log(`PLAYER TWO : ${_players[1].getScore()}`)
+        // console.log(`PLAYER TWO : ${_players[1].getScore()}`)
 
         p2Name.style.alignSelf = 'center'
         p2Score.style.alignSelf = 'center'
